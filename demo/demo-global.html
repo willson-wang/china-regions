@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../dist/index.aio.js"></script>
+    <script>
+        const provinces = regions.getProvinces()
+        const province = regions.getProvinces('13')
+        const province1 = regions.getProvinces("河北省")
+        const province2 = regions.getProvinces({name: "河北省", code: '13'})
+        const province3 = regions.getProvinces({code: '13'})
+        const province4 = regions.getProvinces({name: "河北省"})
+        const province5 = regions.getProvinces({names: "河北省"})
+        const citys = regions.getCitys("6110")
+        const city1 = regions.getCitys("商洛市")
+        const city2 = regions.getCitysByProvince('13')
+        const city3 = regions.getCitysByProvince('99')
+        const city4 = regions.getCitysByProvince({provinceCode: '13'})
+        const city5 = regions.getCitysByProvince({provinceCodes: '13'})
+        const areas = regions.getAreas("532301")
+        const area1 = regions.getAreas("楚雄市")
+        const area2 = regions.getAreasByCity()
+        const area3 = regions.getAreasByCity("6110")
+        const area4 = regions.getAreasByCity("611000")
+        const area5 = regions.getAreasByCity({cityCode: "6110"})
+        const area6 = regions.getAreasByCity({cityCodes: "6110"})
+        console.log(provinces);
+        console.log(province, province1, province2, province3, province4, province5);
+        console.log(citys, city1, city2, city3, city4, city5);
+        console.log(areas, area1, area2, area3, area4, area5, area6);
+    </script>
+</body>
+</html>
