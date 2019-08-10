@@ -1,6 +1,5 @@
 # 一个提供api操作全国省市区数据的js库
-
-[![Coverage Status](https://coveralls.io/repos/github/willson-wang/china-regions/badge.svg)](https://coveralls.io/github/willson-wang/china-regions) [![GitHub](https://img.shields.io/github/license/willson-wang/china-regions)](https://github.com/willson-wang/china-regions/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/willson-wang/china-regions.svg?branch=master)](https://travis-ci.org/willson-wang/china-regions.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/willson-wang/china-regions/badge.svg)](https://coveralls.io/github/willson-wang/china-regions) [![GitHub](https://img.shields.io/github/license/willson-wang/china-regions)](https://github.com/willson-wang/china-regions/blob/master/LICENSE)
 
 ## Directory
 
