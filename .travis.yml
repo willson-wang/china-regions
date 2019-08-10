@@ -1,5 +1,22 @@
 language: node_js
 node_js:
+  - "12"
+  - "10"
   - "8"
   - "6"
   - "4"
+sudo: true
+cache:
+  directories:
+  - node_modules
+before_install:
+  - npm i
+script:
+  - npm run build
+after_success:
+  - npm run coveralls
+env:
+  global:
+    secure: "ibEqQUpC2mJzTvM2DWzXeL5Rh0hLs1HmCY83Pgpia7l40BK3MKR6TB574CRmCj7TXQ/wIqldQFe3+/iRrtawl/unvji59pCcBVJN2C0K9QpRcYj74DFPfsgbb6Z5YW/RzZPgm8NhKaTwAa/bZ8HMgNcatOFKnRlOpmXz92K4PkgFJMY0Z4eH4y8eOtH3Yc+HRezHvEYoQoqoWrwcWyXk6OVdQSrXeHi8nEsVF3pX4zu/gl66P02k4/bvDzVSnpN0Mt6myDwB/sMQlTGLDCW1dauNVzVQi/nXrnF1Ti7
+20+grpTTFln1CgNRyeUUhaG3OLy7ciUmTHxwSNHTkNHzUII4+fn3MvHWb/5CtasaqFo2f0hX1oJ8gsDWFCqTZgnYKMKjcdN4k1U1DqeRA1LKXyZt0wyZrQe/aMKWE7DQRRswEjrOBiD4n629z3EZXqsB9
+nUHFE45x4IowAeMSJ1G0YddBF9ikRwP5ufuxDweHxrPZf0nKqGmfpEysYONPLA4JAemkM8VlY5yiUNe/l+2UypdrXXu6Mf0OWToEq8cw+u2CtngLsdI+CjNUGeQJ55+NH0AqovUMHUDhED18Nnnj0LjZpmuf5mbKcljqpSyii/85PSGlZKY+erNUB+leQAp45DHniBASGQ2ccGFZsLBuI5rK3EE102tgJtY6cj9OH54="

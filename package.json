@@ -1,5 +1,5 @@
 {
-  "name": "china-regions",
+  "name": "china-citys",
   "version": "0.0.1",
   "description": "中国省市区，js封装",
   "main": "dist/index.js",
@@ -11,25 +11,38 @@
     "china-regions",
     "js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:willson-wang/china-regions.git"
+  },
   "scripts": {
     "clean": "rm -rf ./dist",
     "lint": "eslint src",
     "build:self": "rollup -c config/rollup.config.js",
     "build:esm": "rollup -c config/rollup.config.esm.js",
     "build:aio": "rollup -c config/rollup.config.aio.js",
-    "build": "npm run clean && npm run build:self && npm run build:esm &&  npm run build:aio",
-    "test": "npm run lint && npm run build && mocha",
-    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags"
+    "build:aio:min": "cross-env NODE_ENV=production rollup -c config/rollup.config.aio.js",
+    "build": "npm run clean && npm run build:self && npm run build:esm && npm run build:aio && npm run build:aio:min",
+    "test": "mocha",
+    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.6",
+    "cross-env": "^5.2.0",
     "eslint": "^6.1.0",
     "expect.js": "^0.3.1",
     "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
     "rollup": "^1.18.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
-    "rollup-plugin-node-resolve": "^5.2.0"
-  }
+    "rollup-plugin-filesize": "^6.1.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.2"
+  },
+  "dependencies": {}
 }

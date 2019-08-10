@@ -1,9 +1,9 @@
-var pkg = require("../package.json");
+const pkg = require("../package.json");
  
-var name = pkg.name.slice(pkg.name.indexOf("-") + 1);
-var version = pkg.version;
+const name = pkg.name.slice(pkg.name.indexOf("-") + 1);
+const version = pkg.version;
 console.log(name);
-var banner = 
+const banner = 
 `/*!
  * type ${version} (https://github.com/willson-wang/china-regions)
  * API https://github.com/willson-wang/china-regions/master/doc/api.md
@@ -12,5 +12,8 @@ var banner =
  */
 `;
 
-exports.name = name;
-exports.banner = banner;
+
+export default {
+    name,
+    banner
+};

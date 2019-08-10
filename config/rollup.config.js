@@ -1,5 +1,8 @@
-var babel = require("rollup-plugin-babel");
-var common = require("./rollup.js");
+import babel from "rollup-plugin-babel";
+import nodeResolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
+import filesize from "rollup-plugin-filesize";
+import common from "./rollup.js";
 
 export default {
     input: "src/index.js",
@@ -11,8 +14,13 @@ export default {
         banner: common.banner,
     },
     plugins: [
+        nodeResolve(),
+        commonjs({
+            include: "node_modules/**",
+        }),
         babel({
             exclude: "node_modules/**"
-        })
+        }),
+        filesize()
     ]
 };
